@@ -18,10 +18,30 @@ Este es un ejemplo de cómo ejecutar una base de datos MySQL contenerizada en un
 * Tener configurado [kubectl](https://kubernetes.io/es/docs/tasks/tools/install-kubectl/) (opcionalmente [oc](https://docs.openshift.com/)) para ejecutar comandos en el cluster
 * Un editor de texto para editar tus archivos de configuración, por ejemplo nano vi/vim o Emacs.
 
+### Generar una contraseña aleatoria (opcionalmente edita )
+
+1.- Clona el repositorio
+
 ```bash
 git clone https://github.com/razeone/kubernetes-mysql
 cd kubernetes-mysql
-
 ```
+
+2.- Edita el archivo `mysql-secret.yml` y elimina las dos últimas líneas:
+
+```bash
+data:
+  password: cGFzc3dvcmQ=
+```
+
+3.- Ejecuta:
+
+```bash
+sh generate_random_password.sh
+```
+
+El comando anterior va a agregar las líneas que eliminaste previamente pero con un nuevo password aleatorio.
+
+4.- Verifica que tu atchivo YAML mantenga el formato necesario.
 
 El contenido de este repositorio es un ejemplo para fines didácticos y no debe ser utilizado en producción.
