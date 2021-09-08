@@ -17,7 +17,7 @@ Este es un ejemplo de cómo ejecutar una base de datos MySQL contenerizada en un
 * Tener configurado [kubectl](https://kubernetes.io/es/docs/tasks/tools/install-kubectl/) (opcionalmente [oc](https://docs.openshift.com/)) para ejecutar comandos en el cluster
 * Un editor de texto para editar tus archivos de configuración, por ejemplo nano vi/vim o Emacs.
 
-### Generar una contraseña aleatoria (opcionalmente edita )
+### Inicio
 
 1.- Clona el repositorio
 
