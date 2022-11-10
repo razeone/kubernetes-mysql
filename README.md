@@ -26,19 +26,21 @@ git clone https://github.com/razeone/kubernetes-mysql
 cd kubernetes-mysql
 ```
 
-2.- Edita el archivo `mysql-deployment.yml` y edita la línea 32 con la contraseña que deseas para el usuario root de MySQL:
-
-```yaml
-          value: '<tu-nueva-contraseña>'
-```
-
-Opcionalmente puedes generar passwords aleatorios utilizando el script `generate_random_password.sh`
+2.- Ejecuta el archivo `generate_random_password.sh` para generar una contraseña aleatoria para el usuario root de MySQL
 
 ```bash
-sh generate_random_password.sh 
+./generate_random_password.sh
 ```
 
-3.- Una vez que hayas cambiado la contraseña; ejecuta:
+Esto creará un archivo llamado password.txt con la contraseña aleatoria generada en base 64, puedes ver el contenido del archivo con el comando `cat password.txt` y el password original en la salida del script.
+
+3.- Edita el archivo `mysql-pass-secret.yml` y edita la línea 7 con el contenido del archivo `password.txt`
+
+```yaml
+          password: '<tu-nueva-contraseña>'
+```
+
+4.- Una vez que hayas cambiado la contraseña; ejecuta:
 
 ```bash
 sh deploy.sh
