@@ -25,7 +25,10 @@ spec:
         app: mysql
     spec:
       containers:
-      - image: mysql:5.7
+      - args
+        - --character-set-server=utf8mb4
+        - --collation-server=utf8mb4_unicode_ci
+      - image: mysql:8.0
         name: mysql
         env:
         - name: MYSQL_ROOT_PASSWORD
